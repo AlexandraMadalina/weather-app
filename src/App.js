@@ -34,23 +34,27 @@ class App extends Component {
     //  const data = await api_call_curent.json();
     const data = await api_call_forecast.json();
     console.log(data);
-    const days = data.list.filter(el => el.dt_txt.split(" ")[1] === "09:00:00");
 
-    const curent_weather = days[0];
-    console.log(curent_weather);
-    if (days.length > 5) days.shift();
-
-    let forecast = [];
-    days.forEach(day => {
-      let obj = {
-        date: day.dt_txt,
-        icon: day.weather[0].icon,
-        temp: day.main.temp
-      };
-      forecast.push(obj);
-    });
     // console.log(forecast);
     if (city && country) {
+      const days = data.list.filter(
+        el => el.dt_txt.split(" ")[1] === "09:00:00"
+      );
+
+      const curent_weather = days[0];
+      console.log(curent_weather);
+      if (days.length > 5) days.shift();
+
+      let forecast = [];
+      days.forEach(day => {
+        let obj = {
+          date: day.dt_txt,
+          icon: day.weather[0].icon,
+          temp: day.main.temp
+        };
+        forecast.push(obj);
+      });
+
       this.setState({
         icon: curent_weather.weather[0].icon,
         temperature: curent_weather.main.temp,
@@ -83,7 +87,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="container w-75">
+        <div className="container w-75 wrapper mt-5 p-5">
           <div className="row">
             <div className="col text-center">
               <Titles />

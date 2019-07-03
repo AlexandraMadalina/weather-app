@@ -1,7 +1,7 @@
 import React from "react";
 
 const Weather = props => (
-  <div className="row rounded-lg border border-success mt-5">
+  <div className="row rounded-lg  mt-5">
     {props.icon && props.description && (
       <div className="col text-center">
         <img
@@ -15,8 +15,8 @@ const Weather = props => (
     )}
 
     {props.city && props.country && props.temperature && (
-      <div className="col">
-        <p className="weather__key">
+      <div className="col text-center">
+        <p className="weather__city">
           <span className="weather__value">
             {" "}
             {props.city}, {props.country}{" "}
@@ -36,7 +36,7 @@ const Weather = props => (
         </p>
         <p className="weather__key">
           Humidity:
-          <span className="weather__value"> {props.humidity}</span>
+          <span className="weather__value"> {props.humidity}%</span>
         </p>
         <p className="weather__key">
           Wind:
@@ -45,7 +45,12 @@ const Weather = props => (
       </div>
     )}
 
-    {props.error && <p className="weather__key"> {props.error}</p>}
+    {props.error && (
+      <div className="col text-center">
+        {" "}
+        <p className="weather__error text-center"> {props.error}</p>
+      </div>
+    )}
   </div>
 );
 

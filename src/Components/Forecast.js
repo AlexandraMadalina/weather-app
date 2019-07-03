@@ -5,7 +5,7 @@ const Forecast = props => {
   return (
     <Fragment>
       {props.forecast && (
-        <div className="row rounded-lg border border-success">
+        <div className="row ">
           {props.forecast.map(day => (
             <Day
               key={day.date}
