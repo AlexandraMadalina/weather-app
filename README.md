@@ -6,7 +6,7 @@ I followed this exercises during my training as JuniorWeb Developer at BeCode in
 
 ## Description
 
-In the Weather app you can get the weather for the current day and 5 day forecast. For this exercise I use the API from [OpenWeather](https://openweathermap.org/);
+In the Weather app you can get the weather for the current day and 5 day forecast. For this exercise I use the API from [OpenWeather](https://openweathermap.org/)
 
 ## My approach
 
